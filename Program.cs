@@ -1,4 +1,4 @@
-﻿class SimpleBaseData<T>() {
+class SimpleBaseData<T>() {
     private List<T> storedData;
     private List<DateTime> inputDates;
 
