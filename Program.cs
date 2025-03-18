@@ -7,31 +7,29 @@ class main()
     {
         
         pemrosesData test = new pemrosesData();
-        int terbesar = test.DapatkanNilaiTerbesar(10, 30, 22);
-        DapatkanNilaiTerbsear();
-
+        test.DapatkanNilaiTerbesar<double>(10,30,22);
     }
 }
 
 class pemrosesData {
 
-    static void DapatkanNilaiTerbesar<T>(T data, T data1, T data2) {
+    public void DapatkanNilaiTerbesar<T>(T data, T data1, T data2) {
         dynamic a = data;
         dynamic b = data1;
         dynamic c = data2;
         dynamic akhir = 0;
         if (a > b && a > c)
         {
-            a = akhir;
+            akhir = a;
         }
         else if (b > c && b > a)
         {
-            b = akhir;
+            akhir = b;
         }
         else if (c > a && c > b) {
-            c = akhir;
+            akhir = c;
         }
-        Console.WriteLine(akhir);
+        Console.WriteLine("nilai terbesar adalah " + akhir);
     }
 }
 
