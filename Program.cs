@@ -1,35 +1,25 @@
-﻿using System.Diagnostics;
+class SimpleBaseData<T>() {
+    private List<T> storedData;
+    private List<DateTime> inputDates;
 
-class main()
-{
-    //103022300083
-    public static void Main(string[] args)
-    {
-        
-        pemrosesData test = new pemrosesData();
-        test.DapatkanNilaiTerbesar<double>(10,30,22);
+    public SimpleDataBase() {
+        storedData = new List<T>();
+        inputDates = new List<DateTime>();
+    }
+
+    public void AddNewData(T data){ 
+        storedData.Add(data);
+        inputDates.Add(DateTime.Now);
+    }
+
+    public void printAllData() {
+        for (int i = 0; i < storedData.Count; i++) {
+            Console.WriteLine(storedData[i] + " " + inputDates[i]);
+        }
     }
 }
 
-class pemrosesData {
-
-    public void DapatkanNilaiTerbesar<T>(T data, T data1, T data2) {
-        dynamic a = data;
-        dynamic b = data1;
-        dynamic c = data2;
-        dynamic akhir = 0;
-        if (a > b && a > c)
-        {
-            akhir = a;
-        }
-        else if (b > c && b > a)
-        {
-            akhir = b;
-        }
-        else if (c > a && c > b) {
-            akhir = c;
-        }
-        Console.WriteLine("nilai terbesar adalah " + akhir);
-    }
+class main() { 
+    SimpleBaseData<int> test = new SimpleBaseData<int>();
+    test.AddNewData(10);
 }
-
